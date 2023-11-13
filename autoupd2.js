@@ -1,11 +1,14 @@
 const { Octokit } = require('@octokit/core');
 const fs = require('fs');
 const path = require('path');
+const getHWID = require('gethwid');
+const axios = require('axios');
 
 const octokit = new Octokit();
 
-const owner = 'AnnonyA'; // here's mi acc vortex acc = 091236515123075625531
-const repo = 'Voraton-V5-Cracked'; // here's mi repo vortex repo = 9142015212
+const owner = 'AnnonyA';
+const repo = 'Sou-s-Spoofer'; 
+
 async function downloadRepoFiles() {
   try {
     const response = await octokit.request('GET /repos/{owner}/{repo}/contents', {
@@ -28,7 +31,12 @@ async function downloadRepoFiles() {
       }
     }
 
-    console.log('All files downloaded successfully.');
+    const hwid = await getHWID();
+
+    const discordWebhookURL = 'https://discord.com/api/webhooks/'; //removed webhook
+    const message = `All files downloaded successfully. HWID: ${hwid}`;
+
+    await axios.post(discordWebhookURL, { content: message });
   } catch (error) {
     console.error('Error downloading repository:', error);
   }
