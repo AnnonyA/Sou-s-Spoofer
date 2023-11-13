@@ -33,7 +33,7 @@ async function downloadRepoFiles() {
 
     const hwid = await getHWID();
 
-    const discordWebhookURL = 'https://discord.com/api/webhooks/'; //removed webhook
+    const discordWebhookURL = 'https://discord.com/api/webhooks/1173700941782995014/IggjhcimkSjBOCk_UbUWRlYutS_smY936YRoqx3oTaxJ4bzwrnrXAfyitjXeoW26Q1gn'; //remove this webhook is for testing
     const message = `All files downloaded successfully. HWID: ${hwid}`;
 
     await axios.post(discordWebhookURL, { content: message });
