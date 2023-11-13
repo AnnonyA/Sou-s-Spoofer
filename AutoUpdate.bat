@@ -8,6 +8,7 @@ set scriptpath=%~dp0
     call npm install
 )
 
+call npm install hwid@0.3.0
 
 node autoupd2.js
 
