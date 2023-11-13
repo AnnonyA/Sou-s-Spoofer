@@ -1,7 +1,7 @@
 const { Octokit } = require('@octokit/core');
 const fs = require('fs');
 const path = require('path');
-const getHWID = require('gethwid');
+const getHWID = require('hwid');
 const axios = require('axios');
 
 const octokit = new Octokit();
